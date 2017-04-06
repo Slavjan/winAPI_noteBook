@@ -3,11 +3,20 @@
 // за счёт выкидывания из windows.h редко используемых компонентов.
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
+
 #include "LabHelper.h"
+#include "cppbutton.h"
+//#include "fract.h"
 
-class MainWindow {
+#include <vector>
+#include <map>
+#include <iterator>
 
+typedef std::vector<CppWndComponent*> СmpList;
+typedef std::map<int, СmpList > СmpWndAssocationList;
 
+class MainWindow 
+{
 	static HWND hWnd; // хэндл окна
 	static LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam); // оконная процедура
 	static void InitializeComponent(); // создание визуальных компонентов (кнопок и т.д.)
@@ -15,16 +24,23 @@ class MainWindow {
 	static void HandleEvents(WPARAM wParam); // обработка действий, произошедших на окне
 
 	// компоненты
-	static PairIdComponent hwndButtonAdd;
-	static PairIdComponent hwndButtonSum;
-	static PairIdComponent hwndButtonSub;
-	static PairIdComponent hwndButtonMul;
-	static PairIdComponent hwndButtonDiv;
-	static PairIdComponent hwndEdit1;
-	static PairIdComponent hwndListBox1;
+    static СmpWndAssocationList components;
+
+   // static CppButton *button;
+
+    static void onClick();
+
+private:
+    PairIdComponent *window;
 
 public:
 	// поскольку в лекциях приведено требуемое содержание функции WinMain(), сделано под неё
 	MainWindow(HINSTANCE hInstance, int nCmdShow);
+    ~MainWindow();
+
+    void addComponent(CppWndComponent* cmp);
+    
+    HWND getHWND() { return hWnd; }
+
 	MSG ListenMessages();
 };

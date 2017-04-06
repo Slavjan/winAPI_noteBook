@@ -1,7 +1,7 @@
 #include "cppButton.h"
 
 
-CppButton::CppButton( int x, int y, int width, int height, LPCSTR caption, void( *OnClickCallback ), HWND hwnd )
+CppButton::CppButton( int x, int y, int width, int height, LPCSTR caption, void(*OnClick)(), HWND hwnd )
 {
     component.component = CreateWindow( "BUTTON", 
                                         caption, 
@@ -12,5 +12,15 @@ CppButton::CppButton( int x, int y, int width, int height, LPCSTR caption, void(
                                         ( HINSTANCE )GetWindowLong(hwnd, GWL_HINSTANCE),
                                         NULL
                                         );
-    OnClick = OnClickCallback;
+    OnClick = OnClick;
+}
+
+int CppButton::getId()
+{
+    return this->getId();
+}
+
+HWND CppButton::getHWND()
+{
+    return this->getHWND();
 }

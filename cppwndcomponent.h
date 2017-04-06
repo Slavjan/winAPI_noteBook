@@ -3,20 +3,21 @@
 
 #include "LabHelper.h"
 
-class Component
+class CppWndComponent
 {
 protected:
     PairIdComponent component;
 
-    Component():component(NULL)
+    CppWndComponent():component(NULL)
     {
     }
 
 public:
+   // CppWndComponent( CppWndComponent* cmp );
     
     int getId();
     HWND getHWND();
-    void( *OnClick );
+    void(*OnClick)();
     
 };
 

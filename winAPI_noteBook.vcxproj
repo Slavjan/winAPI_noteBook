@@ -110,14 +110,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="component.cpp" />
+    <ClCompile Include="cppwndcomponent.cpp" />
     <ClCompile Include="cppButton.cpp" />
     <ClCompile Include="LabHelper.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="component.h" />
+    <ClInclude Include="cppwndcomponent.h" />
     <ClInclude Include="cppButton.h" />
     <ClInclude Include="LabHelper.h" />
     <ClInclude Include="MainWindow.h" />

@@ -1,13 +1,15 @@
 #ifndef CPPBUTTON_H
 #define CPPBUTTON_H
 
-#include "component.h"
+#include "cppwndcomponent.h"
 
-class CppButton :
-    public Component
+class CppButton : CppWndComponent
 {
 public:
-    CppButton(int x, int y, int width, int height, LPCSTR caption, void( *OnClickCallback ), HWND hwnd );
+    CppButton(int x, int y, int width, int height, LPCSTR caption, void(*OnClick)(), HWND hwnd );
+
+    int getId();
+    HWND getHWND();
 };
 
 #endif
