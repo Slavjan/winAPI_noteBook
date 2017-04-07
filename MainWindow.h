@@ -13,26 +13,23 @@
 #include <iterator>
 
 typedef std::vector<CppWndComponent*> СmpList;
-typedef std::map<int, СmpList > СmpWndAssocationList;
+typedef std::map<HWND, СmpList > СmpWndAssocationList;
 
 class MainWindow 
 {
 	static HWND hWnd; // хэндл окна
 	static LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam); // оконная процедура
-	static void InitializeComponent(); // создание визуальных компонентов (кнопок и т.д.)
+	void InitializeComponent(); // создание визуальных компонентов (кнопок и т.д.)
 	static void CollectFractsAndOperate(char op); // обработка списка дробей из ListBox
-	static void HandleEvents(WPARAM wParam); // обработка действий, произошедших на окне
+	static void HandleEvents( HWND hwnd, WPARAM wParam); // обработка действий, произошедших на окне
 
 	// компоненты
     static СmpWndAssocationList components;
 
    // static CppButton *button;
 
-    static void onClick();
-
-private:
-    PairIdComponent *window;
-
+    static void onClick( HWND hwnd );
+    
 public:
 	// поскольку в лекциях приведено требуемое содержание функции WinMain(), сделано под неё
 	MainWindow(HINSTANCE hInstance, int nCmdShow);

@@ -3,10 +3,10 @@
 
 #include "cppwndcomponent.h"
 
-class CppButton : CppWndComponent
+class CppButton : public CppWndComponent
 {
 public:
-    CppButton(int x, int y, int width, int height, LPCSTR caption, void(*OnClick)(), HWND hwnd );
+    CppButton(int x, int y, int width, int height, LPCSTR caption, void(*OnClick)(HWND), HWND hwnd );
 
     int getId();
     HWND getHWND();

@@ -6,18 +6,17 @@
 class CppWndComponent
 {
 protected:
-    PairIdComponent component;
-
-    CppWndComponent():component(NULL)
-    {
-    }
+    PairIdComponent cmpnt;
+    CppWndComponent();
+    CppWndComponent( CppWndComponent& cmp );
 
 public:
-   // CppWndComponent( CppWndComponent* cmp );
-    
-    int getId();
+    virtual ~CppWndComponent();
+
+    int getId() const;
     HWND getHWND();
-    void(*OnClick)();
+
+    void(*OnClick)(HWND);
     
 };
 
