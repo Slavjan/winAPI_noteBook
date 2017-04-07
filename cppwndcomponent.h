@@ -8,7 +8,6 @@ class CppWndComponent
 protected:
     PairIdComponent cmpnt;
     CppWndComponent();
-    CppWndComponent( CppWndComponent& cmp );
 
 public:
     virtual ~CppWndComponent();

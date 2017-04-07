@@ -7,7 +7,7 @@
 #include <iostream>
 #include <sstream>
 
-// из лекций:
+// РёР· Р»РµРєС†РёР№:
 struct PairIdComponent {
 	PairIdComponent(HWND hwnd) {
 		component = hwnd;

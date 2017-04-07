@@ -1,6 +1,6 @@
 #include "MainWindow.h"
 
-ÑmpWndAssocationList MainWindow::components;
+Ð¡mpWndAssocationList MainWindow::components;
 HWND MainWindow::hWnd = NULL;
 
 void MainWindow::onClick( HWND hwnd )
@@ -21,7 +21,7 @@ MainWindow::MainWindow( HINSTANCE hInstance, int nCmdShow )
     wcl.lpszMenuName = NULL;
     wcl.cbClsExtra = NULL;
     wcl.cbWndExtra = NULL;
-    wcl.hbrBackground = ( HBRUSH )GetStockObject( WHITE_BRUSH ); // áåëûé öâåò ôîíà
+    wcl.hbrBackground = ( HBRUSH )GetStockObject( WHITE_BRUSH ); // Ð±ÐµÐ»Ñ‹Ð¹ Ñ†Ð²ÐµÑ‚ Ñ„Ð¾Ð½Ð°
 
     if( !RegisterClass( &wcl ) ) // try to register window class
         return;
@@ -57,15 +57,15 @@ MainWindow::MainWindow( HINSTANCE hInstance, int nCmdShow )
         return;
 
     InitializeComponent();
-    // îòîáðàæàåì îêíî
+    // Ð¾Ñ‚Ð¾Ð±Ñ€Ð°Ð¶Ð°ÐµÐ¼ Ð¾ÐºÐ½Ð¾
     ShowWindow( hWnd, nCmdShow );
     UpdateWindow( hWnd );
 }
 
 MainWindow::~MainWindow()
 {
-    for( ÑmpWndAssocationList::iterator i = components.begin(); i != components.end(); i++ ){
-        for( ÑmpList::iterator j = ( i->second ).begin(); j != ( i->second ).end(); j++ ){
+    for( Ð¡mpWndAssocationList::iterator i = components.begin(); i != components.end(); i++ ){
+        for( Ð¡mpList::iterator j = ( i->second ).begin(); j != ( i->second ).end(); j++ ){
             delete *j;
         }
     }

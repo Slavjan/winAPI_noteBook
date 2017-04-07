@@ -1,6 +1,6 @@
 #pragma once
-// написанная ниже строчка позволяет более быструю компиляцию и загрузку visual studio
-// за счёт выкидывания из windows.h редко используемых компонентов.
+// РЅР°РїРёСЃР°РЅРЅР°СЏ РЅРёР¶Рµ СЃС‚СЂРѕС‡РєР° РїРѕР·РІРѕР»СЏРµС‚ Р±РѕР»РµРµ Р±С‹СЃС‚СЂСѓСЋ РєРѕРјРїРёР»СЏС†РёСЋ Рё Р·Р°РіСЂСѓР·РєСѓ visual studio
+// Р·Р° СЃС‡С‘С‚ РІС‹РєРёРґС‹РІР°РЅРёСЏ РёР· windows.h СЂРµРґРєРѕ РёСЃРїРѕР»СЊР·СѓРµРјС‹С… РєРѕРјРїРѕРЅРµРЅС‚РѕРІ.
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 
@@ -12,26 +12,26 @@
 #include <map>
 #include <iterator>
 
-typedef std::vector<CppWndComponent*> СmpList;
-typedef std::map<HWND, СmpList > СmpWndAssocationList;
+typedef std::vector<CppWndComponent*> РЎmpList;
+typedef std::map<HWND, РЎmpList > РЎmpWndAssocationList;
 
 class MainWindow 
 {
-	static HWND hWnd; // хэндл окна
-	static LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam); // оконная процедура
-	void InitializeComponent(); // создание визуальных компонентов (кнопок и т.д.)
-	static void CollectFractsAndOperate(char op); // обработка списка дробей из ListBox
-	static void HandleEvents( HWND hwnd, WPARAM wParam); // обработка действий, произошедших на окне
+	static HWND hWnd; // С…СЌРЅРґР» РѕРєРЅР°
+	static LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam); // РѕРєРѕРЅРЅР°СЏ РїСЂРѕС†РµРґСѓСЂР°
+	void InitializeComponent(); // СЃРѕР·РґР°РЅРёРµ РІРёР·СѓР°Р»СЊРЅС‹С… РєРѕРјРїРѕРЅРµРЅС‚РѕРІ (РєРЅРѕРїРѕРє Рё С‚.Рґ.)
+	static void CollectFractsAndOperate(char op); // РѕР±СЂР°Р±РѕС‚РєР° СЃРїРёСЃРєР° РґСЂРѕР±РµР№ РёР· ListBox
+	static void HandleEvents( HWND hwnd, WPARAM wParam); // РѕР±СЂР°Р±РѕС‚РєР° РґРµР№СЃС‚РІРёР№, РїСЂРѕРёР·РѕС€РµРґС€РёС… РЅР° РѕРєРЅРµ
 
-	// компоненты
-    static СmpWndAssocationList components;
+	// РєРѕРјРїРѕРЅРµРЅС‚С‹
+    static РЎmpWndAssocationList components;
 
    // static CppButton *button;
 
     static void onClick( HWND hwnd );
     
 public:
-	// поскольку в лекциях приведено требуемое содержание функции WinMain(), сделано под неё
+	// РїРѕСЃРєРѕР»СЊРєСѓ РІ Р»РµРєС†РёСЏС… РїСЂРёРІРµРґРµРЅРѕ С‚СЂРµР±СѓРµРјРѕРµ СЃРѕРґРµСЂР¶Р°РЅРёРµ С„СѓРЅРєС†РёРё WinMain(), СЃРґРµР»Р°РЅРѕ РїРѕРґ РЅРµС‘
 	MainWindow(HINSTANCE hInstance, int nCmdShow);
     ~MainWindow();
 

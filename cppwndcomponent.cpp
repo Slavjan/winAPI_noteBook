@@ -1,13 +1,9 @@
 #include "cppwndcomponent.h"
 
-CppWndComponent::CppWndComponent() :cmpnt( NULL )//, OnClick(NULL)
+CppWndComponent::CppWndComponent() :cmpnt( NULL )
 {
-// @d3i0 мне кажется тут надо выделить память на cmpnt
 }
 
-CppWndComponent::CppWndComponent( CppWndComponent & cmp ): cmpnt(cmp.cmpnt), OnClick(cmp.OnClick)
-{
-}
 
 CppWndComponent::~CppWndComponent()
 {
