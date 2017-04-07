@@ -110,6 +110,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="cppedit.cpp" />
+    <ClCompile Include="cpplistbox.cpp" />
     <ClCompile Include="cppwndcomponent.cpp" />
     <ClCompile Include="cppButton.cpp" />
     <ClCompile Include="LabHelper.cpp" />
@@ -117,6 +119,8 @@
     <ClCompile Include="MainWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="cppedit.h" />
+    <ClInclude Include="cpplistbox.h" />
     <ClInclude Include="cppwndcomponent.h" />
     <ClInclude Include="cppButton.h" />
     <ClInclude Include="LabHelper.h" />

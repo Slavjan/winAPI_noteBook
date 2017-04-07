@@ -17,12 +17,12 @@ CppButton::CppButton( int x, int y, int width, int height, LPCSTR caption, void(
 // maybe you turn on micro?
 // are you heard me?
 
-int CppButton::getId()
+int CppButton::getId() const
 {
     return this->getId();
 }
 
-HWND CppButton::getHWND()
+HWND CppButton::getHWND() const
 {
     return this->getHWND();
 }
